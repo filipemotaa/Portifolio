@@ -1,8 +1,4 @@
-// Alternar Tema
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
+
 
 // Animações simples ao rolar
 const elements = document.querySelectorAll("section, .service, .project, .testimonial");

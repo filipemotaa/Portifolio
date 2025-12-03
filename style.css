@@ -1,18 +1,22 @@
 /* ============================
-   VARIÁVEIS
+   VARIÁVEIS – TEMA LEÃO
 ============================ */
 :root {
-    --bg: #f5f7fa;
-    --text: #111;
-    --primary: #4f46e5;
-    --card: #ffffff;
+    --bg: #0D0D0D;               /* fundo preto premium */
+    --text: #F9F9F9;             /* texto claro */
+    --primary: #D4AF37;          /* dourado elegante */
+    --primary-dark: #C89B3C;     /* dourado queimado */
+    --accent: #E9B949;           /* amarelo suave */
 
-    --dark-bg: #0d1117;
-    --dark-text: #e6e6e6;
-    --dark-card: #161b22;
+    --card: #1A1A1A;             /* cards grafite */
+
+    /* Dark mode */
+    --dark-bg: #0A0A0A;
+    --dark-text: #E6E6E6;
+    --dark-card: #151515;
 
     --radius: 14px;
-    --shadow: 0 4px 10px rgba(0,0,0,0.12);
+    --shadow: 0 4px 10px rgba(0,0,0,0.25);
     --transition: .3s ease;
 }
 
@@ -33,11 +37,11 @@ body {
 }
 
 body.dark {
-    background: linear-gradient(180deg, #0d1117, #0f141c);
+    background: var(--dark-bg);
     color: var(--dark-text);
 }
 
-/* Cards & sections no dark mode */
+/* Cards no dark mode */
 body.dark .card,
 body.dark .header,
 body.dark .service,
@@ -55,7 +59,7 @@ body.dark .testimonial {
     padding: 18px 50px;
     align-items: center;
     background: var(--card);
-    box-shadow: 0 2px 8px #00000010;
+    box-shadow: 0 2px 8px #00000050;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -65,6 +69,7 @@ body.dark .testimonial {
 .logo {
     font-size: 26px;
     font-weight: bold;
+    color: var(--primary);
 }
 
 .logo span {
@@ -74,7 +79,7 @@ body.dark .testimonial {
 .nav a {
     margin-left: 22px;
     font-weight: 500;
-    color: inherit;
+    color: var(--text);
     font-size: 18px;
     transition: var(--transition);
 }
@@ -83,7 +88,14 @@ body.dark .testimonial {
     color: var(--primary);
 }
 
-.theme-toggle { background: none; border: none; font-size: 22px; cursor: pointer; }
+.theme-toggle { 
+    background: none; 
+    border: none; 
+    font-size: 22px; 
+    cursor: pointer; 
+    color: var(--primary);
+}
+
 /* ============================
    HERO
 ============================ */
@@ -98,27 +110,29 @@ body.dark .testimonial {
     font-size: 44px;
     margin-bottom: 20px;
     font-weight: 700;
+    color: var(--primary);
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 40px;
-    opacity: .8;
+    opacity: .85;
 }
 
+/* Botão */
 .btn {
     padding: 17px 30px;
-    background: var(--primary);
-    color: #fff;
+    background: var(--primary-dark);
+    color: #000;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-block;
     transition: var(--transition);
 }
 
 .btn:hover {
-    opacity: .85;
+    background: var(--primary);
     transform: translateY(-3px);
 }
 
@@ -135,6 +149,7 @@ h2 {
     font-size: 32px;
     margin-bottom: 40px;
     text-align: center;
+    color: var(--primary);
 }
 
 /* ============================
@@ -153,11 +168,13 @@ h2 {
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid rgba(212,175,55,0.12);
 }
 
 .service:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    border-color: var(--primary);
 }
 
 .service i {
@@ -181,17 +198,23 @@ h2 {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid rgba(212,175,55,0.12);
 }
 
 .project:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    border-color: var(--primary);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+.sub {
+    margin-bottom: 15px;
 }
 
 .project img {
-     width: 100%;
-    height: 200px;      /* define a altura padrão */
-    object-fit: cover;  /* corta e ajusta automaticamente */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -210,11 +233,13 @@ h2 {
     padding: 25px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: 1px solid rgba(212,175,55,0.12);
     transition: var(--transition);
 }
 
 .testimonial:hover {
     transform: translateY(-5px);
+    border-color: var(--primary);
 }
 
 /* ============================
@@ -229,6 +254,7 @@ h2 {
 .paragrafo {
     margin-bottom: 15px;
     margin-top: -20px;
+    opacity: .85;
 }
 
 /* ============================
@@ -285,3 +311,25 @@ h2 {
     }
 }
 
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn i {
+  width: auto;  
+  height: auto; 
+  line-height: 1; 
+}
